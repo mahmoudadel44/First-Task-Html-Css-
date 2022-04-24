@@ -1,0 +1,761 @@
+/*----------------------------- common styles -----------------------------------------------*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.parentTitle,
+.title {
+  font-family: "Carattere", cursive;
+}
+.body,
+.home .title,
+.project .title,
+.offer .title {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*----------------------------- general styles -----------------------------------------------*/
+.customCenterParent {
+  padding-top: 100px;
+  text-align: center;
+}
+.customParent {
+  padding-top: 75px;
+}
+.line {
+  width: 60px;
+  height: 4px;
+  display: block;
+  background: #4564b8;
+  margin: auto;
+  margin-top: 10px;
+}
+.parentTitle {
+  letter-spacing: 1px;
+  font-size: 35px;
+}
+.allContent {
+  overflow: hidden;
+  margin: 60px auto;
+}
+.single {
+  width: 30%;
+  float: left;
+  padding: 30px 14px;
+  border: 1px solid #888888;
+  position: relative;
+  z-index: 3;
+}
+.second {
+  margin: 0% 5%;
+}
+.customColor {
+  color: #6195ff;
+}
+.white {
+  color: #fff;
+}
+/*------------------------------- start header styles-------------------------------------- */
+.header {
+  position: fixed;
+  width: 100%;
+  min-height: 50px;
+  z-index: 6;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.header img {
+  float: left;
+  width: 75px;
+  height: 50px;
+  border-radius: 10px;
+}
+.header ul {
+  list-style-type: none;
+  float: right;
+  width: 70%;
+  text-align: right;
+}
+.header ul li {
+  display: inline-block;
+  padding: 10px;
+}
+.header ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.header ul li a::after,
+.header ul li a.active::after {
+  content: "";
+  height: 3px;
+  display: block;
+  background-color: #0000ff;
+  margin: 3px auto;
+}
+.header ul li a::after {
+  width: 0px;
+}
+.header ul li a.active::after {
+  width: 100%;
+}
+.header ul li a:hover::after {
+  width: 100%;
+  background-color: #0000ff;
+  transition: 0.5s;
+}
+
+.header ul li .blogItem {
+  position: absolute;
+  background-color: #0000ff;
+  width: 124px;
+  top: 51px;
+  text-align: center;
+  right: 13%;
+  margin-right: 20px;
+}
+.header ul .lastItem a {
+  position: relative;
+}
+.header ul .lastItem:hover .blogItem {
+  display: block;
+}
+.header ul .lastItem .blogItem {
+  display: none;
+}
+.header ul .lastItem .blogItem {
+  list-style-type: circle;
+}
+.header .lastItem .blogItem li {
+  padding: 8px;
+  margin-top: 8px;
+}
+
+/*---------------------------------------end header styles ------------------------*/
+
+/* start home styles */
+.home {
+  position: relative;
+  height: 100vh;
+  background-image: url("../images/restaurant.jpeg");
+}
+.home .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+}
+.home .allContent {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.home .allContent .title {
+  font-size: 55px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.home .allContent .desc {
+  margin: 14px 0px;
+  letter-spacing: 2px;
+  color: #efebcd;
+}
+.home .btn {
+  width: 156px;
+  height: 54px;
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-right: 12px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+}
+.home .btn:hover {
+  opacity: 0.7;
+}
+.home .learnBtn {
+  background-color: #0000ff;
+}
+/*-------------------------------------- end home styles -------------------------------------*/
+
+/*-------------------------------------- start projects styles -------------------------------------*/
+.project::after {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  top: 0;
+  left: 0;
+  background-color: #333333;
+  transition: 0.7s;
+  z-index: -1;
+}
+.project:hover::after {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.project:hover::after .title {
+  color: #fff;
+}
+.project:hover .title {
+  color: #fff;
+}
+.project .icon {
+  margin-bottom: 8px;
+}
+
+.project .title {
+  margin: 8px 0px;
+  font-size: 20px;
+}
+.project .desc {
+  font-size: 16px;
+  color: #9ba0a5;
+  margin: 15px 0px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  color: #899;
+}
+.project a {
+  color: #6195ff;
+  text-decoration: none;
+}
+
+/*-------------------------------------- end projects styles -------------------------------------*/
+
+/*-------------------------------------- start featuresWork styles -------------------------------------*/
+.featuresWork {
+  background: #e8e8e8;
+  padding: 120px 0;
+  height: 1200px;
+  text-align: center;
+}
+.featuresWork .featuresWorkOverlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.featuresWork .single:hover .featuresWorkOverlay {
+  visibility: visible;
+  opacity: 1;
+  transition: 1s;
+}
+.featuresWork .single {
+  border: none;
+  background: #fff;
+  padding: 0 20px;
+}
+.featuresWork .featureWork {
+  margin-bottom: -4px;
+}
+.featuresWork .allFeatures {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+.featuresWork .single:hover .allFeatures {
+  visibility: visible;
+  transition: 0.5s;
+}
+.featuresWork .featuresTitle {
+  text-transform: uppercase;
+  display: block;
+  color: #6195ff;
+  font-size: 16px;
+  position: relative;
+  top: 10px;
+}
+.featuresWork .single:hover .featuresTitle {
+  top: 0px;
+  transition: 0.5s;
+}
+.featuresWork .featuresDesc {
+  font-size: 20px;
+  color: #fff;
+  margin: 5px 0 18px 0;
+  transition-delay: 0.4s;
+  position: relative;
+  top: 15px;
+}
+.featuresWork .single:hover .featuresDesc {
+  top: 0px;
+  transition: 0.5s;
+  transition-delay: 0.3s;
+}
+.featuresWork .single:hover .featuresTitle {
+  top: 0px;
+  transition: 0.5s;
+}
+.featuresWork a {
+  background-color: #6195ff;
+  transition: 1s;
+  transition-delay: 0.6s;
+  padding: 10px;
+  margin-top: 100px;
+}
+
+/*-------------------------------------- en featuresWork styles -------------------------------------*/
+
+/*-------------------------------------- start offers styles -------------------------------------*/
+
+.offers .parentTitle {
+  text-align: center;
+}
+.offer::after {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  top: 0;
+  left: 0;
+  background-color: #333333;
+  transition: 0.7s;
+  z-index: -1;
+}
+.offer:hover::after {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.offer:hover::after .title {
+  color: #fff;
+}
+
+.offer:hover .title {
+  color: #fff;
+}
+.offer .iconTitleContainer {
+  position: relative;
+}
+.offer .iconTitleContainer h2 {
+  display: inline;
+  margin-left: 52px;
+}
+
+.offer .icon {
+  margin-bottom: 8px;
+  margin-top: -2px;
+  position: absolute;
+}
+
+.offer .title {
+  font-size: 20px;
+}
+.offer .desc {
+  font-size: 16px;
+  color: #9ba0a5;
+  margin: 15px 0px 15px 53px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  color: #899;
+}
+
+/*-------------------------------------- end offers styles -------------------------------------*/
+/*-------------------------------------- start ChooseUs styles -------------------------------------*/
+.chooseUs {
+  background-color: #f9f9f9;
+  padding: 120px 0;
+  height: 675px;
+}
+.chooseUs .chooseLine {
+  margin: unset;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.chooseUs .chooseUsDesc {
+  color: #999;
+  font-size: 20px;
+  margin-bottom: 22px;
+  margin-top: 22px;
+  line-height: 1.5;
+}
+.chooseUs .content,
+.chooseUs .features {
+  width: 50%;
+  float: left;
+}
+.chooseUs .features {
+  text-align: center;
+}
+.chooseUs ul {
+  list-style-type: none;
+}
+.chooseUs ul li {
+  margin-bottom: 12px;
+}
+.chooseUs ul li i {
+  border: 1px solid #6195ff;
+  color: #6195ff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+}
+.chooseUs ul li span {
+  color: #999;
+}
+.chooseUs .featuresElements {
+  list-style-type: none;
+  text-align: center;
+}
+.chooseUs .featuresElements li {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 12px 6px;
+  border-radius: 6px;
+  background-color: #a8a8a8;
+}
+.chooseUs .featuresElements li:hover {
+  background-color: #6195ff;
+}
+.chooseUs .featuresElements li.first {
+  background-color: #6195ff;
+}
+
+/*-------------------------------------- end ChooseUs styles -------------------------------------*/
+
+/*-------------------------------------- start statistics styles -------------------------------------*/
+.statistics {
+  background-color: #f9f9f9;
+  height: 100vh;
+  background-image: url("../images/strawbery.jpeg");
+  background-size: cover;
+  padding: 120px 0;
+  background-attachment: fixed;
+  height: 400px;
+  position: relative;
+}
+.statistics .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.statistics .statisticsItem {
+  position: relative;
+  width: 25%;
+  float: left;
+  z-index: 3;
+  text-align: center;
+  margin-top: 32px;
+}
+.statistics .statisticsItem h3 {
+  font-size: 32px;
+  margin-top: 20px;
+  margin-bottom: 3px;
+}
+/*-------------------------------------- end statistics styles -------------------------------------*/
+
+/*-------------------------------------- start Pricing styles -------------------------------------*/
+.pricing {
+  background-color: #e8e8e8;
+  padding: 120px 0;
+  height: 750px;
+}
+.pricing .card1,
+.pricing .card2,
+.pricing .card3 {
+  width: 30%;
+  height: 380px;
+  border: 1px solid #a8a8a8;
+  text-align: center;
+  float: left;
+  padding: 42px 15px;
+  position: relative;
+  z-index: 100;
+  margin-top: 80px;
+}
+.pricing .card1::after,
+.pricing .card2::after,
+.pricing .card3::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background: #797a7a;
+  transition: 0.5s;
+}
+.pricing .card1:hover::after,
+.pricing .card2:hover::after,
+.pricing .card3:hover::after {
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.pricing .contentTitle {
+  font-size: 17px;
+  color: #aca9a9;
+  text-transform: uppercase;
+  z-index: -1;
+}
+
+.pricing .contentPrice {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #6195ff;
+  border-radius: 50px;
+  padding: 10px 0;
+  margin: 20px auto;
+}
+
+.pricing .contentPriceNumber {
+  font-size: 50px;
+}
+.pricing .month {
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.pricing .contentDesc {
+  color: #a3a3a3;
+  line-height: 2;
+}
+.pricing button {
+  border: 3px solid #6195ff;
+  padding: 4px 8px;
+  width: 120px;
+  font-size: 12px;
+  margin: 15px auto 0;
+}
+
+.pricing .card1:hover,
+.pricing .card2:hover,
+.pricing .card3:hover {
+  color: #800c0c;
+}
+.pricing .card1:hover .contentTitle,
+.pricing .card2:hover .contentTitle,
+.pricing .card3:hover .contentTitle {
+  color: #800c0c;
+}
+
+/*-------------------------------------- end Pricing styles -------------------------------------*/
+
+/*-------------------------------------- start Testimonials styles -------------------------------------*/
+.testimonials {
+  position: relative;
+  background-image: url("../images/food.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 360px;
+}
+.testimonials .overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.testimonials .testimonialElement {
+  float: left;
+  width: 50%;
+  padding-left: 130px;
+  padding-top: 110px;
+  margin-bottom: 110px;
+}
+.testimonials .testimonialData {
+  line-height: 1.5;
+  margin-bottom: 20px;
+  position: relative;
+}
+.testimonials img {
+  border-radius: 35px;
+}
+.testimonials .content {
+  display: inline-block;
+  position: absolute;
+  top: 11px;
+  left: 90px;
+}
+.testimonials .testimonialDesc {
+  text-transform: capitalize;
+  line-height: 1.5;
+  font-size: 15px;
+}
+/*-------------------------------------- end Testimonials styles -------------------------------------*/
+
+/*-------------------------------------- start Our Team styles -------------------------------------*/
+
+/*-------------------------------------- end Our Team styles -------------------------------------*/
+.ourTeam {
+  overflow: hidden;
+  background-color: #f8f8f8;
+  padding: 80px 80px;
+}
+.ourTeam .single {
+  border: none;
+  background-color: #d1caca;
+  padding: 26px 20px 22px;
+  width: 29%;
+}
+.ourTeam .second {
+  margin: 0 6%;
+}
+.ourTeam .single::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background: rgb(34, 34, 34);
+  z-index: 4;
+  opacity: 0;
+}
+.ourTeam .single:hover::after {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  opacity: 0.5;
+}
+.ourTeam .ourTeamImg {
+  position: relative;
+}
+.ourTeam .ourTeamIcons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+.ourTeam .single:hover .ourTeamIcons {
+  visibility: visible;
+}
+.ourTeam .ourTeamIcons a {
+  width: 42px;
+  height: 42px;
+  display: block;
+  background-color: #7ba7ff;
+  margin-left: auto;
+  color: #fff;
+}
+.ourTeam .ourTeamIcons a {
+  line-height: 42px;
+}
+.ourTeam .ourTeamTitle {
+  margin: 10px 0;
+  color: #fff;
+}
+.ourTeam .ourTeamText {
+  color: #0000ff;
+  text-transform: uppercase;
+}
+/*-------------------------------------- start RecentNews styles -------------------------------------*/
+.recentNews {
+  overflow: hidden;
+  background-color: #f8f8f8;
+  padding: 40px 0;
+}
+.recentNews .parentTitle {
+  text-align: center;
+}
+.recentNews .single {
+  border: none;
+  background: #fff;
+  position: relative;
+}
+.recentNews .single::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0px;
+  top: 0;
+  left: 0;
+  background-color: #6195ff;
+  transition: 0.7s;
+  opacity: 0.5;
+}
+.recentNews .single:hover:after {
+  width: 100%;
+  height: 100%;
+}
+.recentNews .newsList {
+  list-style-type: none;
+  margin-top: 6px;
+}
+.recentNews .newsList li {
+  display: inline-block;
+  font-size: 12px;
+  margin: 2px 6px;
+}
+.recentNews h3 {
+  margin: 14px 0 4px;
+}
+.recentNews .newsDesc {
+  line-height: 1.6;
+  color: rgb(148, 148, 148);
+}
+.recentNews .newsBtn {
+  text-decoration: none;
+  margin-top: 24px;
+}
+.recentNews .newsBtn a {
+  text-decoration: none;
+}
+/*-------------------------------------- end RecentNews styles -------------------------------------*/
+
+/*-------------------------------------- startfooter styles -------------------------------------*/
+.footer {
+  text-align: center;
+  height: 300px;
+  padding: 70px 0 90px;
+  background-color: #4c4d52;
+}
+.footer ul {
+  list-style-type: none;
+  margin-top: 20px;
+}
+.footer ul li {
+  background-color: #6195ff;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
+}
+.footer ul li:hover {
+  transition: 0.5s all ease-in-out;
+  background-color: #0954ec;
+}
+.footer ul li a {
+  color: #fff;
+  display: block;
+  font-size: 22px;
+  width: 100%;
+  padding-top: 11px;
+  line-height: 1.5;
+}
+.footer p {
+  text-transform: uppercase;
+  color: rgb(146, 146, 146);
+  font-size: 14px;
+  margin-top: 16px;
+}
+/*-------------------------------------- end footer styles -------------------------------------*/
